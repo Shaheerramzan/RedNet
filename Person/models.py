@@ -28,3 +28,9 @@ class Phone(models.Model):
 class Friend(models.Model):
     person = models.ForeignKey(Person, on_delete=models.CASCADE)
     friend = models.OneToOneField(Person, on_delete=models.CASCADE)
+
+
+class Complain(models.Model):
+    person1 = models.OneToOneField(Person, on_delete=models.CASCADE)
+    person2 = models.ForeignKey(Person, on_delete=models.CASCADE)
+    complain_message = models.CharField(max_length=500, null=True)
