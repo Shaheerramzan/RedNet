@@ -21,16 +21,10 @@ class Person(models.Model):
 class Phone(models.Model):
     person = models.OneToOneField(Person, on_delete=models.CASCADE)
     phone_number_1 = models.IntegerField(db_index=True)
-    phone_number_2 = models.IntegerField()
-    phone_number_3 = models.IntegerField()
+    phone_number_2 = models.IntegerField(null=True)
+    phone_number_3 = models.IntegerField(null=True)
 
 
 class Friend(models.Model):
-    person = models.ForeignKey(Person, on_delete=models.CASCADE)
-    friend = models.OneToOneField(Person, on_delete=models.CASCADE)
-
-
-class Complain(models.Model):
-    person1 = models.OneToOneField(Person, on_delete=models.CASCADE)
-    person2 = models.ForeignKey(Person, on_delete=models.CASCADE)
-    complain_message = models.CharField(max_length=500, null=True)
+    person = models.ForeignKey(Person, on_delete=models.CASCADE, related_name='person')
+    friend = models.ForeignKey(Person, on_delete=models.CASCADE, related_name='friend')
