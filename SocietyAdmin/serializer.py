@@ -1,10 +1,14 @@
 from rest_framework import serializers
-from rest_framework.exceptions import ValidationError
-
-from library.models import Book
+from SocietyAdmin.models import SocietyAdmin, Complain
 
 
-class LibrarySerializer(serializers.ModelSerializer):
+class SocietyAdminSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Book
+        model = SocietyAdmin
+        fields = '__all__'
+
+
+class ComplainSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Complain
         fields = '__all__'

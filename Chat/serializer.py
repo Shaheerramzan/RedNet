@@ -1,10 +1,8 @@
 from rest_framework import serializers
-from rest_framework.exceptions import ValidationError
-
-from library.models import Book
+from Chat.models import Chat
 
 
-class LibrarySerializer(serializers.ModelSerializer):
+class ChatSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Book
+        model = Chat
         fields = '__all__'

@@ -1,10 +1,8 @@
 from rest_framework import serializers
-from rest_framework.exceptions import ValidationError
-
-from library.models import Book
+from ConveyanceProvider.models import ConveyanceProvider
 
 
-class LibrarySerializer(serializers.ModelSerializer):
+class ConveyanceProviderSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Book
+        model = ConveyanceProvider
         fields = '__all__'

@@ -1,10 +1,8 @@
 from rest_framework import serializers
-from rest_framework.exceptions import ValidationError
-
-from library.models import Book
+from SuperAdmin.models import SuperAdmin
 
 
-class LibrarySerializer(serializers.ModelSerializer):
+class SuperAdminSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Book
+        model = SuperAdmin
         fields = '__all__'
