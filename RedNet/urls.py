@@ -16,6 +16,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from Chat import urls as chat_url
+from ConveyanceProvider import urls as conveyance_provider_url
+from Donor import urls as donor_url
+from Person import urls as person_url
+from ReportProblem import urls as report_problem_url
+from Society import urls as society_url
+from SuperAdmin import urls as super_admin_url
+from SocietyAdmin import urls as society_admin_url
+from History import urls as history_url
 
 urlpatterns = [
     path('admin/', admin.site.urls),
