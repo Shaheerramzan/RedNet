@@ -19,5 +19,5 @@ from SuperAdmin import views
 
 urlpatterns = [
     path('superadmin/', views.SuperAdminAdminList.as_view(), name='society list'),
-    path('superadmin/<pk:int>', views.SuperAdminAdminList.as_view(), name='society list'),
+    path('superadmin/<int:pk>', views.SuperAdminAdminList.as_view(), name='society list'),
 ]
