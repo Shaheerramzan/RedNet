@@ -17,6 +17,6 @@ from django.urls import path
 from Person import views
 
 urlpatterns = [
-    path('person/', views.PersonListView.as_view(), name='person list'),
-    path('person/<int:pk>', views.PersonDetail.as_view(), name='person detail'),
+    path('', views.PersonListView.as_view(), name='person list'),
+    path('<int:pk>', views.PersonDetail.as_view(), name='person detail'),
 ]

@@ -17,6 +17,6 @@ from django.urls import path, include
 from SuperAdmin import views
 
 urlpatterns = [
-    path('superadmin/', views.SuperAdminAdminList.as_view(), name='society list'),
-    path('superadmin/<int:pk>', views.SuperAdminAdminList.as_view(), name='society list'),
+    path('', views.SuperAdminAdminList.as_view(), name='society list'),
+    path('<int:pk>', views.SuperAdminAdminList.as_view(), name='society list'),
 ]

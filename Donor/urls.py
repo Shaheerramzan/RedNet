@@ -17,6 +17,6 @@ from django.urls import path
 from Donor import views
 
 urlpatterns = [
-    path('donors/', views.DonorList.as_view(), name='donor-list'),
-    path('donors/<int:pk>', views.DonorDetail.as_view(), name='donor-detail')
+    path('', views.DonorList.as_view(), name='donor-list'),
+    path('<int:pk>', views.DonorDetail.as_view(), name='donor-detail')
 ]
