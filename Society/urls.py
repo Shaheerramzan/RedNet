@@ -19,5 +19,5 @@ from Society import views
 
 urlpatterns = [
     path('society/', views.SocietyList.as_view(), name='society list'),
-    path('society/<pk:int>', views.SocietyDetail.as_view(), name='society list'),
+    path('society/<int:pk>', views.SocietyDetail.as_view(), name='society list'),
 ]
