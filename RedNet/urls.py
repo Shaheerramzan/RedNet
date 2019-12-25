@@ -27,13 +27,13 @@ from History import urls as history_url
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('person/', person_url),
-    path('chat/', chat_url),
-    path('conveyance_provider/', conveyance_provider_url),
-    path('donor/', donor_url),
-    path('history/', history_url),
-    path('report_problem/', report_problem_url),
-    path('society/', society_url),
-    path('society_admin/', society_admin_url),
-    path('super_admin/', super_admin_url),
+    path('person/', include('Person.urls')),
+    path('chat/', include('Chat.urls')),
+    path('conveyance_provider/', include('ConveyanceProvider.urls')),
+    path('donor/', include('Donor.urls')),
+    path('history/', include('History.urls')),
+    path('report_problem/', include('ReportProblem.urls')),
+    path('society/', include('Society.urls')),
+    path('society_admin/', include('SocietyAdmin.urls')),
+    path('super_admin/', include('SuperAdmin.urls'))
 ]
