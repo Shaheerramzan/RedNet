@@ -20,7 +20,7 @@ class PersonListView(ListCreateAPIView):
         return persons_queryset
 
 
-class UserUpdateRetrieveDeleteView(RetrieveUpdateDestroyAPIView):
+class PersonDetail(RetrieveUpdateDestroyAPIView):
     serializer_class = PersonSerializer
     queryset = Person.objects.all()
 
