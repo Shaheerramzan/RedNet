@@ -1,7 +1,7 @@
 from rest_framework import generics
 
 from SuperAdmin.models import SuperAdmin
-from SuperAdmin.serializer import serializers
+from SuperAdmin.serializer import SuperAdminSerializer
 
 
 # Create your views here.
@@ -9,9 +9,9 @@ from SuperAdmin.serializer import serializers
 
 class SuperAdminAdminList(generics.ListCreateAPIView):
     queryset = SuperAdmin.objects.all()
-    serializer_class = serializers
+    serializer_class = SuperAdminSerializer
 
 
 class SuperAdminAdminDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = SuperAdmin.objects.all()
-    serializer_class = serializers
+    serializer_class = SuperAdminSerializer
