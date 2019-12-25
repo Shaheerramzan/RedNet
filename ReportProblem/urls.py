@@ -18,6 +18,6 @@ from django.urls import path
 from ReportProblem import views
 
 urlpatterns = [
-    path('report/', views.ReportList.as_view(), name='report list'),
-    path('report/<pk:int>', views.ReportDetail.as_view(), name='report detail'),
+    path('/', views.ReportList.as_view(), name='report list'),
+    path('/<pk:int>', views.ReportDetail.as_view(), name='report detail'),
 ]
