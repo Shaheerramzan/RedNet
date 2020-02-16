@@ -20,9 +20,9 @@ class Person(models.Model):
 
 class Phone(models.Model):
     person = models.OneToOneField(Person, on_delete=models.CASCADE)
-    phone_number_1 = models.IntegerField(db_index=True)
-    phone_number_2 = models.IntegerField(null=True)
-    phone_number_3 = models.IntegerField(null=True)
+    phone_number_1 = models.CharField(max_length=11, db_index=True)
+    phone_number_2 = models.CharField(max_length=11)
+    phone_number_3 = models.CharField(max_length=11)
 
 
 class Friend(models.Model):
