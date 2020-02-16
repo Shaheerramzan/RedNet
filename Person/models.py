@@ -5,17 +5,17 @@ from django.db import models
 
 
 class Person(models.Model):
-    date_of_birth = models.DateField()
+    date_of_birth = models.DateField(null=True)
     username = models.CharField(max_length=20, null=True)
     password = models.CharField(max_length=20, null=True)
     first_name = models.CharField(max_length=20, null=True)
-    last_name = models.CharField(max_length=20)
+    last_name = models.CharField(max_length=20, null=True)
     gender = models.CharField(max_length=6, null=True)
     blood_group = models.CharField(max_length=3, null=True)
-    picture = models.CharField(max_length=100)
-    longitude = models.FloatField()
-    latitude = models.FloatField()
-    profile_completed = models.BooleanField()
+    picture = models.ImageField(null=True)
+    longitude = models.FloatField(null=True)
+    latitude = models.FloatField(null=True)
+    profile_completed = models.BooleanField(default=False)
 
 
 class Phone(models.Model):

@@ -10,6 +10,6 @@ class SocietyAdmin(models.Model):
 
 
 class Complain(models.Model):
-    person1 = models.ForeignKey(Person, on_delete=models.CASCADE, related_name='person1')
-    person2 = models.ForeignKey(Person, on_delete=models.CASCADE, related_name='person2')
-    complain_message = models.CharField(max_length=500, null=True)
+    person1 = models.ForeignKey(Person, on_delete=models.CASCADE, related_name='person1', null=False)
+    person2 = models.ForeignKey(Person, on_delete=models.CASCADE, related_name='person2', null=False)
+    complain_message = models.CharField(max_length=500, null=False)

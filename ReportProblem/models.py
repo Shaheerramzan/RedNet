@@ -5,4 +5,4 @@ from Person.models import Person
 
 class Report(models.Model):
     person_id = models.OneToOneField(Person, on_delete=models.CASCADE)
-    comment = models.CharField(max_length=500)
+    comment = models.CharField(max_length=500, null=False)
