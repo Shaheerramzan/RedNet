@@ -1,6 +1,5 @@
 from django.db import models
 from Person.models import Person
-from Society.models import Society
 
 
 # Create your models here.

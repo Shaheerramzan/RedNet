@@ -12,7 +12,7 @@ class Person(models.Model):
     last_name = models.CharField(max_length=20, null=True)
     gender = models.CharField(max_length=6, null=True)
     blood_group = models.CharField(max_length=3, null=True)
-    picture = models.ImageField(null=True)
+    picture = models.CharField(max_length=20, null=True)
     longitude = models.FloatField(null=True)
     latitude = models.FloatField(null=True)
     profile_completed = models.BooleanField(default=False)

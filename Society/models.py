@@ -5,7 +5,8 @@ from Donor.models import Donor
 
 
 class Society(models.Model):
-    name = models.CharField(max_length=50, null=False)
-    head_id = models.OneToOneField(Person, on_delete=models.CASCADE, null=False)
+    name = models.CharField(max_length=50)
+    head_id = models.OneToOneField(Person, on_delete=models.CASCADE)
     group = models.CharField(max_length=100)
-    donors = models.ManyToManyField(Donor, on_delete=models.CASCADE)
+    # donors = models.ManyToManyField(Donor, on_delete=models.CASCADE)
+
