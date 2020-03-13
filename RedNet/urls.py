@@ -35,5 +35,5 @@ urlpatterns = [
     path('report_problem/', include('ReportProblem.urls')),
     path('society/', include('Society.urls')),
     path('society_admin/', include('SocietyAdmin.urls')),
-    path('super_admin/', include('SuperAdmin.urls'))
+    path('super_admin/', include('SuperAdmin.urls')),
 ]

@@ -4,7 +4,7 @@ from django.db import models
 # Create your models here.
 
 class Phone(models.Model):
-    phone_number_1 = models.CharField(max_length=11, db_index=True)
+    phone_number_1 = models.CharField(max_length=11)
     phone_number_2 = models.CharField(max_length=11)
     phone_number_3 = models.CharField(max_length=11)
 
@@ -21,7 +21,10 @@ class Person(models.Model):
     longitude = models.FloatField(null=True)
     latitude = models.FloatField(null=True)
     profile_completed = models.BooleanField(default=False)
-    phone = models.CharField(max_length=20)
+    phone = models.CharField(max_length=20, null=True)
+
+    def set_password(self, password):
+        self.password = password
 
 
 class Friend(models.Model):

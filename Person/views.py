@@ -4,6 +4,8 @@ from django.shortcuts import render
 from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIView
 from rest_framework.response import Response
 from rest_framework.views import APIView
+from rest_framework import permissions, status
+from rest_framework.decorators import api_view
 
 from Person.models import Person
 from Person.serializer import PersonSerializer
@@ -24,23 +26,23 @@ class PersonDetail(RetrieveUpdateDestroyAPIView):
     serializer_class = PersonSerializer
     queryset = Person.objects.all()
 
-
-class CustomUserView(APIView):
-    def get(self, request, *args, **kwargs):
-        persons = Person.objects.all()
-        persons_data = PersonSerializer(persons, many=True)
-        return Response(persons_data.data)
-
-    def post(self, request, *args, **kwargs):
-        data = request.data
-        serializer = PersonSerializer(data=data)
-        if serializer.is_valid(raise_exception=True):
-            serializer.save()
-        return Response(serializer.data)
-
-
-class CustomUserRetrieveView(APIView):
-    def get(self, request, pk, *args, **kwargs):
-        person = Person.objects.get(id=pk)
-        persons_data = PersonSerializer(person)
-        return Response(persons_data.data)
+#
+# class CustomUserView(APIView):
+#     def get(self, request, *args, **kwargs):
+#         persons = Person.objects.all()
+#         persons_data = PersonSerializer(persons, many=True)
+#         return Response(persons_data.data)
+#
+#     def post(self, request, *args, **kwargs):
+#         data = request.data
+#         serializer = PersonSerializer(data=data)
+#         if serializer.is_valid(raise_exception=True):
+#             serializer.save()
+#         return Response(serializer.data)
+#
+#
+# class CustomUserRetrieveView(APIView):
+#     def get(self, request, pk, *args, **kwargs):
+#         person = Person.objects.get(id=pk)
+#         persons_data = PersonSerializer(person)
+#         return Response(persons_data.data)
